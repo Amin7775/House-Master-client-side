@@ -1,4 +1,4 @@
-import { RiHomeLine } from "react-icons/ri";
+// import { RiHomeLine } from "react-icons/ri";
 import { SiHomebridge } from "react-icons/si";
 import { NavLink } from "react-router-dom";
 import "./navtwo.css"
@@ -41,7 +41,7 @@ const NavTwo = () => {
   return (
     // <SiHomebridge className="text-5xl"></SiHomebridge>
     //
-    <div className="navbar bg-base-100 container mx-auto border-2 border-red-300 h-24">
+    <div className="navbar bg-base-100 container mx-auto h-24">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -78,7 +78,7 @@ const NavTwo = () => {
         </a>
       </div>
       <div className="navbar-center hidden lg:flex items-center" id="sidebar">
-        <ul className="menu menu-horizontal px-1 my-auto">{navLinks}</ul>
+        <ul className="menu menu-horizontal px-1 my-auto z-[1]">{navLinks}</ul>
       </div>
       <div className="navbar-end">
         <a className="btn">Button</a>

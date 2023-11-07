@@ -6,7 +6,7 @@ import NavTwo from "./NavTwo";
 
 const NavBar = () => {
   return (
-    <div className="w-full bg-[#323233] h-16 relative">
+    <div className="w-full bg-[#323233]">
       <div className="container mx-auto text-white flex justify-between py-2">
         {/* nav section 1- phone and time */}
         <div className="flex items-center gap-5">
@@ -37,7 +37,7 @@ const NavBar = () => {
           <FaReddit className="cursor-pointer"></FaReddit>
         </div>
       </div>
-      <div>
+      <div className="bg-white">
         <NavTwo></NavTwo>
       </div>
     </div>
