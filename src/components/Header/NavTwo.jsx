@@ -41,7 +41,7 @@ const NavTwo = () => {
               <NavLink to={"/myServices"} className={"text-base font-semibold"}>My services</NavLink>
             </li>
             <li>
-              <NavLink to={"/addServices"} className={"text-base font-semibold"}>Add Services</NavLink>
+              <NavLink to={"/dashboard/addService"} className={"text-base font-semibold"}>Add Services</NavLink>
             </li>
             <li>
               <NavLink to={"/mySchedules"} className={"text-base font-semibold"}>My schedules</NavLink>
