@@ -1,6 +1,6 @@
 // import { RiHomeLine } from "react-icons/ri";
 import { SiHomebridge } from "react-icons/si";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./navtwo.css"
 
 const NavTwo = () => {
@@ -81,7 +81,29 @@ const NavTwo = () => {
         <ul className="menu menu-horizontal px-1 my-auto z-[1]">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="flex items-center gap-3">
+          <p className="hidden md:block font-medium">Not Logged In</p>
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-28 rounded-full">
+              <img src="https://i.ibb.co/RjNr5mp/speaker2.jpg" />
+              </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className=" z-[1]  shadow menu menu-sm dropdown-content bg-[#323233] rounded-box w-52 text-white"
+            >
+              <li className="hover:bg-white rounded-md">
+                <a>Not Logged In</a>
+              </li>
+              
+              <li className="hover:bg-white rounded-md">
+              <Link to={'/login'}><button>Login</button></Link>
+              </li>
+            </ul>
+          </div>
+            
+        </div>
       </div>
     </div>
   );
