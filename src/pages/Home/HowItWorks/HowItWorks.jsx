@@ -2,7 +2,7 @@ import howItWorks from "../../../assets/images/HowItWoks3.jpg"
 
 const HowItWorks = () => {
     return (
-        <div className="h-[600px] bg-[#323233]">
+        <div className="h-[600px] bg-[#323233] ">
             <h1 className="text-white text-center font-semibold text-4xl pt-5">Easiest Way To Get Our Service</h1>
             <div className="container mx-auto flex justify-center gap-10 items-center h-full pb-10">
             <div className="w-1/3">
