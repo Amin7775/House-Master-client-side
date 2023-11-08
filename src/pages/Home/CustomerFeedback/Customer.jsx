@@ -18,7 +18,7 @@ const Customer = () => {
     slidesToScroll: 1,
   };
   return (
-    <div className="h-[600px] bg-[#fbfbfa] border-2 border-red-400">
+    <div className="h-[600px] bg-[#fbfbfa] ">
       <div className="container mx-auto mt-12 pb-10">
         <h1 className="font-semibold">
           <AiOutlineLine className="inline"></AiOutlineLine> SOME HAPPY FACES
