@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import RegisterBanner from "./RegisterBanner/RegisterBanner";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 
 const Register = () => {
+
+  const {createUser,updateUser}= useContext(AuthContext)
+
 
     const handleRegister = e => {
         e.preventDefault()
@@ -14,7 +19,19 @@ const Register = () => {
         const password = form.password.value;
 
         console.log(name,photoURL,email,password)
+
+        createUser(email,password)
+        .then(UserDetails => {
+          console.log(UserDetails.user)
+          updateUser(name,photoURL)
+          .then(console.log("Profile Updated"))
+          .catch(error => console.log(error.message))
+        })
+        .catch(error => {
+          console.log(error.message)
+        })
     }
+    
     return (
         <div className="min-h-screen bg-[#fbfbfa]">
             <RegisterBanner></RegisterBanner>

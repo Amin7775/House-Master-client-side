@@ -2,8 +2,21 @@
 import { SiHomebridge } from "react-icons/si";
 import { Link, NavLink } from "react-router-dom";
 import "./navtwo.css"
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const NavTwo = () => {
+
+  const {logOut,user,pic,setPic} = useContext(AuthContext)
+
+  console.log(user, "from nav")
+
+  const handleLogout = () =>{
+    setPic("https://i.ibb.co/RjNr5mp/speaker2.jpg")
+    logOut()
+    .then(console.log("Logout Success"))
+    .catch(error=> console.log(error.message))
+  }
 
   const navLinks = (
     <>
@@ -17,7 +30,7 @@ const NavTwo = () => {
         <NavLink to={"/login"} className={"text-base font-semibold"}>Login</NavLink>
       </li>
       <li>
-        <NavLink to={"/logout"} className={"text-base font-semibold"}>Logout</NavLink>
+        <NavLink onClick={handleLogout} className={"text-base font-semibold"}>Logout</NavLink>
       </li>
       <li tabIndex={0}>
         <details>
@@ -80,13 +93,15 @@ const NavTwo = () => {
       <div className="navbar-center hidden lg:flex items-center" id="sidebar">
         <ul className="menu menu-horizontal px-1 my-auto z-[1]">{navLinks}</ul>
       </div>
+      {/* user section */}
       <div className="navbar-end">
-      <div className="flex items-center gap-3">
+      {/* <div className="flex items-center gap-3">
           <p className="hidden md:block font-medium">Not Logged In</p>
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-28 rounded-full">
-              <img src="https://i.ibb.co/RjNr5mp/speaker2.jpg" />
+                
+              <img src={pic} />
               </div>
             </label>
             <ul
@@ -103,7 +118,59 @@ const NavTwo = () => {
             </ul>
           </div>
             
+        </div> */}
+        {
+          user ? 
+          <div className="flex items-center gap-3">
+          <p className="hidden md:block font-medium text-black">{user.displayName}</p>
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar dark:border-white dark:border-2">
+            <div className="w-28 rounded-full">
+                <img src={pic} />
+                </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className=" z-[1]  shadow menu menu-sm dropdown-content bg-[#323233] rounded-box w-52 text-white"
+            >
+              <li className="hover:bg-white rounded-md">
+                <a>{user.displayName}</a>
+              </li>
+              <li className="hover:bg-white rounded-md">
+                <a>{user.email}</a>
+              </li>
+              <li className="hover:bg-white rounded-md">
+                <button onClick={handleLogout}>Logout</button>
+              </li>
+            </ul>
+          </div>
+            
         </div>
+        :
+          <div className="flex items-center gap-3">
+          <p className="hidden md:block font-medium">Not Logged In</p>
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <div className="w-28 rounded-full">
+                <img src="https://i.ibb.co/RjNr5mp/speaker2.jpg" />
+                </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className=" z-[1]  shadow menu menu-sm dropdown-content bg-[#323233] rounded-box w-52 text-white"
+            >
+              <li className="hover:bg-white rounded-md">
+                <a>No User Found</a>
+              </li>
+              
+              <li className="hover:bg-white rounded-md">
+              <Link to={'/login'}><button>Login</button></Link>
+              </li>
+            </ul>
+          </div>
+            
+        </div>
+        }
       </div>
     </div>
   );

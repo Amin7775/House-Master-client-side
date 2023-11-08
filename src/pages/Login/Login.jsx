@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import LoginBanner from "./LoginBanner/LoginBanner";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
+
+  const {loginUser,googleRegister,setPic} = useContext(AuthContext)
 
     const handleLogin = e => {
         e.preventDefault()
@@ -11,6 +15,25 @@ const Login = () => {
         const password = form.password.value;
 
         console.log(email,password)
+
+        loginUser(email,password)
+        .then(UserInfo =>{
+          console.log(UserInfo.user)
+        })
+        .catch(error=>{
+          console.log(error.message)
+        })
+    }
+
+    const handleGoogle = () =>{
+      googleRegister()
+      .then(userDetails => {
+        console.log(userDetails.user)
+        setPic(userDetails.user.photoURL)
+      })
+      .catch(error=>{
+        console.log(error.message,"ERROR")
+      })
     }
 
   return (
@@ -57,7 +80,7 @@ const Login = () => {
         <div className="mt-6 space-y-2">
         <p className="text-center mt-2">
                   Login With Google ?{" "}
-                  <span className="text-blue-600 cursor-pointer font-medium">
+                  <span onClick={handleGoogle} className="text-blue-600 cursor-pointer font-medium">
                     Click Here
                   </span>
                 </p>
