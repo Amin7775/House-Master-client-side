@@ -1,6 +1,6 @@
 
 
-const AddServiceBanner = () => {
+const ServicesBanner = () => {
     return (
         <div
           className="hero h-[400px]"
@@ -15,12 +15,11 @@ const AddServiceBanner = () => {
               <p className="mb-5 bg-yellow-300 text-black inline px-4 py-1">
                 House Master
               </p>
-              <h1 className="mt-5 text-5xl font-bold text-black">Add Service Page</h1>
-              
+              <h1 className="mt-5 text-5xl font-bold text-black">Services</h1>
             </div>
           </div>
         </div>
       );
 };
 
-export default AddServiceBanner;
+export default ServicesBanner;

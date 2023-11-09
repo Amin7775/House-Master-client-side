@@ -2,6 +2,7 @@ import { useContext } from "react";
 import AddServiceBanner from "./AddServiceBanner/AddServiceBanner";
 import { AiOutlineLine } from "react-icons/ai";
 import { AuthContext } from "../../provider/AuthProvider";
+import axios from "axios";
 
 const AddService = () => {
   const { user } = useContext(AuthContext);
@@ -15,7 +16,7 @@ const AddService = () => {
         const providerEmail = form.email.value;
         const providerPhotoURL = form.providerPhotoURL.value;
         const service = form.service.value;
-        const servicePhotoURL = form.service.value;
+        const servicePhotoURL = form.servicePhotoURL.value;
         const price = form.price.value;
         const serviceArea= form.serviceArea.value;
         const short_description= form.short_description.value;
@@ -32,6 +33,10 @@ const AddService = () => {
         }
 
         console.log(addedService)
+
+        axios.post("http://localhost:5000/services",addedService)
+        .then(res => console.log(res.data))
+        
     }
 
   return (
