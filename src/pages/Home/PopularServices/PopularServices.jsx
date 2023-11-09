@@ -4,9 +4,9 @@ import PopularServicesCard from "./PopularServicesCard";
 const PopularServices = ({ filterData }) => {
   console.log(filterData);
   return (
-    <div className="bg-[#f5f5f9] py-10">
+    <div className="bg-[#f5f5f9] p-10">
       <div className="container mx-auto">
-        <h1 className="text-4xl text-center font-semibold mb-10">
+        <h1 className="text-4xl text-center font-bold  mb-10">
           Popular Services
         </h1>
 
@@ -14,7 +14,7 @@ const PopularServices = ({ filterData }) => {
           {/* {
                     <PopularServicesCard filterData={filterData}></PopularServicesCard>
                 } */}
-          <div className="grid grid-cols-2 border-4 border-yellow-300 mx-20 my-20">
+          <div className="grid grid-cols-2 border-4 border-yellow-300 mx-20 mb-5">
             {/* 1 */}
             <div className="flex flex-col shadow-sm">
               <div className="">
@@ -54,7 +54,7 @@ const PopularServices = ({ filterData }) => {
                   </div>
                   <div className="flex justify-center"> 
                   <Link to={`/services/${filterData[0]?._id}`}>
-                  <button className="btn bg-yellow-300 hover:bg-yellow-400 border-0 rounded-none">Show Details</button>
+                  <button className="btn mb-2 bg-yellow-300 hover:bg-yellow-400 border-0 rounded-none">Show Details</button>
                   </Link>
                   </div>
                 </div>
@@ -99,7 +99,7 @@ const PopularServices = ({ filterData }) => {
                   </div>
                   <div className="flex justify-center"> 
                   <Link to={`/services/${filterData[1]?._id}`}>
-                  <button className="btn bg-yellow-300 hover:bg-yellow-400 border-0 rounded-none">Show Details</button>
+                  <button className="btn mb-2 bg-yellow-300 hover:bg-yellow-400 border-0 rounded-none">Show Details</button>
                   </Link>
                   </div>
                 </div>
@@ -144,7 +144,7 @@ const PopularServices = ({ filterData }) => {
                   </div>
                   <div className="flex justify-center"> 
                   <Link to={`/services/${filterData[2]?._id}`}>
-                  <button className="btn bg-yellow-300 hover:bg-yellow-400 border-0 rounded-none">Show Details</button>
+                  <button className="btn mb-2 bg-yellow-300 hover:bg-yellow-400 border-0 rounded-none">Show Details</button>
                   </Link>
                   </div>
                 </div>
@@ -189,13 +189,19 @@ const PopularServices = ({ filterData }) => {
                   </div>
                   <div className="flex justify-center"> 
                   <Link to={`/services/${filterData[3]?._id}`}>
-                  <button className="btn bg-yellow-300 hover:bg-yellow-400 border-0 rounded-none">Show Details</button>
+                  <button className="btn mb-2 bg-yellow-300 hover:bg-yellow-400 border-0 rounded-none">Show Details</button>
                   </Link>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="flex justify-center">
+            <Link to={'/services'}>
+                <button className="btn bg-yellow-300 hover:bg-yellow-300 border-none rounded-none px-5 font-semibold text-base">Show All</button>
+            </Link>
         </div>
       </div>
     </div>

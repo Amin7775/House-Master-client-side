@@ -2,17 +2,21 @@
 import { SiHomebridge } from "react-icons/si";
 import { Link, NavLink } from "react-router-dom";
 import "./navtwo.css"
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const NavTwo = () => {
 
-  const {logOut,user,pic,setPic} = useContext(AuthContext)
+  const {logOut,user,photo} = useContext(AuthContext)
+  const [image, setImage] = useState(null);
+  useEffect(() => {
+    setImage(photo);
+  }, [photo]);
 
-  console.log(user, "from nav")
+  // console.log(user, "from nav")
 
   const handleLogout = () =>{
-    setPic("https://i.ibb.co/RjNr5mp/speaker2.jpg")
+
     logOut()
     .then(console.log("Logout Success"))
     .catch(error=> console.log(error.message))
@@ -29,10 +33,13 @@ const NavTwo = () => {
       <li>
         <NavLink to={"/login"} className={"text-base font-semibold"}>Login</NavLink>
       </li>
-      <li>
-        <NavLink onClick={handleLogout} className={"text-base font-semibold"}>Logout</NavLink>
+      {
+        user?.email && <li onClick={handleLogout} className={"text-base font-semibold h-full my-auto hover:bg-base-300 px-2 py-2 rounded-lg cursor-pointer"}>
+        Logout
       </li>
-      <li tabIndex={0}>
+      }
+      {
+        user?.email && <li tabIndex={0}>
         <details>
             
           <summary className={"text-base font-semibold"}>Dashboard</summary>
@@ -49,6 +56,8 @@ const NavTwo = () => {
           </ul>
         </details>
       </li>
+      }
+      
     </>
   );
   return (
@@ -126,7 +135,7 @@ const NavTwo = () => {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar dark:border-white dark:border-2">
             <div className="w-28 rounded-full">
-                <img src={pic} />
+            {image ? <img src={image} /> : <img src={user.photoURL} />}
                 </div>
             </label>
             <ul
@@ -152,7 +161,7 @@ const NavTwo = () => {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-28 rounded-full">
-                <img src="https://i.ibb.co/RjNr5mp/speaker2.jpg" />
+            <img src="https://i.ibb.co/RjNr5mp/speaker2.jpg" />
                 </div>
             </label>
             <ul

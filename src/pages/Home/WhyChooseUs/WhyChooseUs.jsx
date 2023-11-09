@@ -8,7 +8,7 @@ import image from "../../../assets/images/why choose us.jpg"
 
 const WhyChooseUs = () => {
     return (
-        <div className="w-full bg-[#f5f5f9] py-10 ">
+        <div className="w-full bg-[#f5f5f9] pb-16 ">
             <div className="container mx-auto">
                 <h1 className="font-semibold"><AiOutlineLine className="inline"></AiOutlineLine> WHY CHOOSE US</h1>
                 <p className="text-3xl font-bold">Because We Care About You</p>

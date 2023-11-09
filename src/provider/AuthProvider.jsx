@@ -9,7 +9,7 @@ const provider = new GoogleAuthProvider();
 const AuthProvider = ({children}) => {
     const [user,setUser] = useState(null);
     const [loading,setLoading] = useState(true);
-    const [pic,setPic]=useState("https://i.ibb.co/RjNr5mp/speaker2.jpg")
+    const [photo,setPhoto]=useState()
     
     //Register User
     const createUser= (email,password) =>{
@@ -29,9 +29,8 @@ const AuthProvider = ({children}) => {
 
     //Update User with display name and photoUrl after creating user
     const updateUser = (name,photoUrlFromRegister) =>{
-        if(photoUrlFromRegister){
-            setPic(photoUrlFromRegister)
-        }
+        {photoUrlFromRegister && setPhoto(photoUrlFromRegister)}
+        {photoUrlFromRegister || setPhoto("https://i.ibb.co/RjNr5mp/speaker2.jpg")}
         return updateProfile(auth.currentUser,{
             displayName: name,
             photoURL: photoUrlFromRegister
@@ -65,8 +64,7 @@ const AuthProvider = ({children}) => {
         logOut,
         loginUser,
         googleRegister,
-        pic,
-        setPic
+        photo
 
     }
     return (
