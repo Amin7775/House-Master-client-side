@@ -1,5 +1,6 @@
 import { SiHomebridge } from "react-icons/si";
 import FooterTwo from "./FooterTwo";
+import { FaFacebook, FaLinkedinIn, FaPinterest, FaReddit, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -28,6 +29,18 @@ const Footer = () => {
     <a className="link link-hover">Terms of use</a> 
     <a className="link link-hover">Privacy policy</a> 
     <a className="link link-hover">Cookie policy</a>
+  </nav>
+  <nav>
+    <header className="footer-title">Social</header>
+    <div className="grid grid-cols-3 text-xl gap-2 pr-3 md:pr-0">
+          <FaTwitter className="cursor-pointer"></FaTwitter>
+          <FaFacebook className="cursor-pointer"></FaFacebook>
+          {/* <FaWhatsapp className="cursor-pointer"></FaWhatsapp> */}
+          <FaPinterest className="cursor-pointer"></FaPinterest>
+          <FaYoutube className="cursor-pointer"></FaYoutube>
+          <FaReddit className="cursor-pointer"></FaReddit>
+          <FaLinkedinIn></FaLinkedinIn>
+        </div>
   </nav>
 </footer>
         <FooterTwo></FooterTwo>

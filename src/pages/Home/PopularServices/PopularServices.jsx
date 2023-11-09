@@ -14,7 +14,7 @@ const PopularServices = ({ filterData }) => {
           {/* {
                     <PopularServicesCard filterData={filterData}></PopularServicesCard>
                 } */}
-          <div className="grid grid-cols-1 gap-10 md:gap-0 md:grid-cols-2 md:border-4 border-yellow-300 md:mx-20 mb-5">
+          <div className="grid grid-cols-1 gap-10 md:gap-0 lg:grid-cols-2 md:border-4 border-yellow-300 md:mx-20 mb-5">
             {/* 1 */}
             <div className="flex flex-col shadow-sm">
               <div className="">
@@ -61,7 +61,7 @@ const PopularServices = ({ filterData }) => {
               </div>
             </div>
             {/* 2 */}
-            <div className="flex flex-col shadow-sm md:border-4 border-t-0 border-r-0 border-b-0 border-yellow-300">
+            <div className="flex flex-col shadow-sm lg:border-4 md:border-t-4 border-r-0 border-b-0 border-yellow-300">
               <div className="">
                 <img
                   className="h-[400px] w-full"
@@ -151,7 +151,7 @@ const PopularServices = ({ filterData }) => {
               </div>
             </div>
             {/* 4 */}
-            <div className="flex flex-col shadow-sm md:border-4 border-r-0 border-b-0 border-yellow-300">
+            <div className="flex flex-col shadow-sm lg:border-4 md:border-t-4 border-r-0 border-b-0 border-yellow-300">
               <div className="">
                 <img
                   className="h-[400px] w-full"

@@ -4,7 +4,7 @@ import { SiHomebridge } from "react-icons/si";
 
 const Banner = () => {
   return (
-    <div className="carousel w-full h-[400px] md:h-[850px]">
+    <div className="carousel w-full h-[400px] md:h-[650px] lg:h-[850px]">
       <div id="slide1" className="carousel-item relative w-full">
         <img src="https://i.ibb.co/bPTXqxX/Banner1.jpg" className="bg-cover bg-center"  />
         <div className="absolute  transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -13,27 +13,27 @@ const Banner = () => {
               ❮
             </a>
             <div className="flex flex-col gap-2 md:gap-5 max-w-xs md:max-w-5xl justify-center text-center">
-              <SiHomebridge className="text-8xl md:text-[150px] text-center w-full text-yellow-300"></SiHomebridge>
-              <p className="text-white font-bold text-3xl md:text-8xl">
+              <SiHomebridge className="text-8xl md:text-9xl lg:text-[150px] text-center w-full text-yellow-300"></SiHomebridge>
+              <p className="text-white font-bold text-3xl md:text-5xl lg:text-8xl">
                 Expert And Fast Team
               </p>
-              <div className="flex mt-2 md:mt-5 justify-center">
+              <div className="flex mt-2 md:mt-2 lg:mt-5 justify-center">
                 <img
                   className="w-60 md:w-96"
                   src="https://i.ibb.co/m8tGt8f/h6-slide-2-separator.png"
                   alt=""
                 />
                 <img
-                  className="hidden md:block md:w-96"
+                  className="hidden lg:block lg:w-96"
                   src="https://i.ibb.co/m8tGt8f/h6-slide-2-separator.png"
                   alt=""
                 />
               </div>
-              <p className="text-white text-xl md:text-4xl">
+              <p className="text-white text-xl md:text-2xl lg:text-4xl">
                 Local Same Day Delivery Specialists
               </p>
 
-              <p className="text-white text-lg md:text-2xl">
+              <p className="text-white text-lg md:text-xl lg:text-2xl">
                 One-stop solution for your services. Order any service, anytime.
               </p>
             </div>
@@ -57,7 +57,7 @@ const Banner = () => {
                 className="w-20 md:w-[150px] mx-auto"
                 alt=""
               />
-              <p className="text-white font-bold text-3xl md:text-8xl">Pay On Spot</p>
+              <p className="text-white font-bold text-3xl md:text-5xl lg:text-8xl">Pay On Spot</p>
               <div className="flex mt-2 md:mt-5 justify-center">
                 <img
                   className="w-60 md:w-96"
@@ -65,7 +65,7 @@ const Banner = () => {
                   alt=""
                 />
                 <img
-                  className="hidden md:block md:w-96"
+                  className="hidden lg:block lg:w-96"
                   src="https://i.ibb.co/m8tGt8f/h6-slide-2-separator.png"
                   alt=""
                 />
@@ -94,7 +94,7 @@ const Banner = () => {
                 className="w-10 md:w-[70px] mx-auto"
                 alt=""
               />
-              <p className="text-white font-bold text-3xl md:text-8xl">
+              <p className="text-white font-bold text-3xl md:text-5xl lg:text-8xl">
                 Your Personal Assistant
               </p>
               <div className="flex mt-2 md:mt-5 justify-center">
@@ -104,12 +104,12 @@ const Banner = () => {
                   alt=""
                 />
                 <img
-                  className="hidden md:block md:w-96"
+                  className="hidden lg:block lg:w-96"
                   src="https://i.ibb.co/m8tGt8f/h6-slide-2-separator.png"
                   alt=""
                 />
               </div>
-              <p className="text-white text-xl md:text-4xl">
+              <p className="text-white text-xl md:text-2xl lg:text-4xl">
                 Super Fast And Fuss Free Service
               </p>
             </div>

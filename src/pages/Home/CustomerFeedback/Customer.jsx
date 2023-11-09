@@ -32,9 +32,9 @@ const Customer = () => {
           {/* 1 */}
           <div className="pb-2">
             <div className="flex flex-col md:flex-row gap-10">
-              <div className="w-full md:w-2/3 border-l-[15px] order-2 md:order-1 border-yellow-300 flex flex-col gap-2 justify-center pl-8 md:pl-16 pb-5 md:mb-0">
+              <div className="w-full md:w-2/3 border-l-[15px] order-2 md:order-1 border-yellow-300 flex flex-col gap-2 justify-center pl-8 lg:pl-16 pb-5 md:mb-0">
                 <p className="text-lg md:text-2xl font-light pr-10">
-                  <span className="text-3xl md:text-6xl font-bold">“</span>Such service
+                  <span className="text-3xl lg:text-6xl font-bold">“</span>Such service
                   platforms are available in other countries. I’ve personally
                   used those when I was abroad. I’m very pleased that such a
                   portal is available here in Bangladesh as well. Thank you
@@ -47,7 +47,7 @@ const Customer = () => {
               </div>
               <img
                 src="https://i.ibb.co/JpGYNjC/cus-1.jpg"
-                className="w-full order-1 md:order-2 md:w-1/3"
+                className="w-full order-1 md:order-2 md:w-1/3 lg:w-1/3"
                 alt=""
               />
             </div>
@@ -55,9 +55,9 @@ const Customer = () => {
           {/* 2 */}
           <div className="pb-2">
             <div className="flex flex-col md:flex-row gap-10">
-              <div className="w-full md:w-2/3 border-l-[15px] order-2 md:order-1 border-yellow-300 flex flex-col gap-2 justify-center pl-8 md:pl-16 pb-5 md:mb-0">
+              <div className="w-full md:w-2/3 border-l-[15px] order-2 md:order-1 border-yellow-300 flex flex-col gap-2 justify-center pl-8 lg:pl-16 pb-5 md:mb-0">
                 <p className="text-lg md:text-2xl font-light pr-10">
-                  <span className="text-3xl md:text-6xl font-bold">“</span>It was my
+                  <span className="text-3xl lg:text-6xl font-bold">“</span>It was my
                   marriage and wasn’t getting schedule from any beauty parlor.
                   So, I downloaded House Master app and found that it has all of my
                   requirements. The beautician arrived in time and was really
@@ -76,9 +76,9 @@ const Customer = () => {
           {/* 3 */}
           <div className="pb-2">
             <div className="flex flex-col md:flex-row gap-10">
-              <div className="w-full md:w-2/3 border-l-[15px] order-2 md:order-1 border-yellow-300 flex flex-col gap-2 justify-center pl-8 md:pl-16 pb-5 md:mb-0">
+              <div className="w-full md:w-2/3 border-l-[15px] order-2 md:order-1 border-yellow-300 flex flex-col gap-2 justify-center pl-8 lg:pl-16 pb-5 md:mb-0">
                 <p className="text-lg md:text-2xl font-light pr-10">
-                  <span className="text-3xl md:text-6xl font-bold">“</span>House Master
+                  <span className="text-3xl lg:text-6xl font-bold">“</span>House Master
                   services are very helpful for working women like me. They were
                   on time as per the schedule to provide the service, and I’m
                   very satisfied with their quality of service.
@@ -98,9 +98,9 @@ const Customer = () => {
           {/* 4 */}
           <div className="pb-2">
             <div className="flex flex-col md:flex-row gap-10">
-              <div className="w-full md:w-2/3 border-l-[15px] order-2 md:order-1 border-yellow-300 flex flex-col gap-2 justify-center pl-8 md:pl-16 pb-5 md:mb-0">
+              <div className="w-full md:w-2/3 border-l-[15px] order-2 md:order-1 border-yellow-300 flex flex-col gap-2 justify-center pl-8 lg:pl-16 pb-5 md:mb-0">
                 <p className="text-lg md:text-2xl font-light pr-10">
-                  <span className="text-3xl md:text-6xl font-bold">“</span>Initially I was
+                  <span className="text-3xl lg:text-6xl font-bold">“</span>Initially I was
                   reluctant. I wasn’t sure how an online platform would be for booking home services.
                   House Master was able to complete the job just as I imagined it
                   to be. Thanks to them, they made it possible.
