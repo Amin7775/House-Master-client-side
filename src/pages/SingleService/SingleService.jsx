@@ -3,6 +3,7 @@ import SingleServiceBanner from "./SingleServiceBanner/SingleServiceBanner";
 import { AiOutlineLine } from "react-icons/ai";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import axios from "axios";
 
 const SingleService = () => {
   const loader = useLoaderData();
@@ -45,6 +46,11 @@ const SingleService = () => {
     };
 
     console.log(purchaseData)
+
+    axios.post("http://localhost:5000/booked",purchaseData)
+    .then(res=>{
+      console.log('res :>> ', res.data);
+    })
   };
 
   return (
