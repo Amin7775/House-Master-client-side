@@ -6,22 +6,42 @@ import { useEffect, useState } from "react";
 
 const Services = () => {
     const [services,setServices] = useState([])
-
-    useEffect(()=>{
-        axios('http://localhost:5000/services')
-    .then(res=> {
-        console.log(res.data)
-        setServices(res.data)
-    })
-    },[])
-
+    const [showAll , setShowAll] = useState(false)
+    // console.log('showAll :>> ', showAll);
+    useEffect(() => {
+    axios('http://localhost:5000/services')
+      .then(res => {
+        if (!showAll) {
+          const filteredServices = res.data.slice(0, 6);
+          setServices(filteredServices);
+        } else {
+          setServices(res.data);
+        }
+      })
+  }, [showAll]);
     
+    
+    
+        
 
     return (
         <div className="min-h-screen bg-[#fbfbfa]">
             <ServicesBanner></ServicesBanner>
             <ServicesSearch services={services} setServices={setServices}></ServicesSearch>
             {services.map(singleService=> <ServiceCard key={singleService._id} singleService={singleService}></ServiceCard>)}
+          
+            <div className="pt-5 pb-10">
+            {   
+                !showAll && <div className="flex justify-center">               
+                <button onClick={()=>setShowAll(!showAll)} className="btn bg-yellow-300 hover:bg-yellow-300">Show More</button>
+            </div>
+            }
+            {   
+                showAll && <div className="flex justify-center">               
+                <button onClick={()=>setShowAll(!showAll)} className="btn bg-yellow-300 hover:bg-yellow-300">Show Less</button>
+            </div>
+            }
+            </div>
         </div>
     );
 };

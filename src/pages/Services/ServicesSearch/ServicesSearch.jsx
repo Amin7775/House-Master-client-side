@@ -28,7 +28,7 @@ console.log(preloadedData);
         <input
           type="text"
           name="search"
-          placeholder="Search By Service Name"
+          placeholder="Search By Service Name || Search After All Products Viewed"
           className="input w-full rounded-none focus:border-yellow-300 focus:border-4 bg-white"
         />
         <button type="submit" className="btn rounded-none bg-yellow-300 hover:bg-yellow-400 border-0">
