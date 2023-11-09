@@ -84,7 +84,7 @@ const NavTwo = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52 text-lg font-medium my-auto"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52  font-medium my-auto bg-[#323233] text-white opacity-100"
             id="sidebar"
           >
             {navLinks}
