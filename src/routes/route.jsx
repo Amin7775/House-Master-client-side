@@ -6,6 +6,7 @@ import Register from "../pages/Register/Register";
 import AddService from "../pages/AddService/AddService";
 import PrivateRoute from "./PrivateRoute";
 import Services from "../pages/Services/Services";
+import SingleService from "../pages/SingleService/SingleService";
 
 
 
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
             {
                 path:'/services',
                 element: <Services></Services>
+            },
+            {
+                path:'/services/:id',
+                element: <SingleService></SingleService>,
+                loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
             }
         ])
       },

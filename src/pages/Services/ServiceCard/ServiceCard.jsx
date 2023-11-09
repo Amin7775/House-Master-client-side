@@ -3,6 +3,7 @@ import Accordion from "./Accordion";
 
 const ServiceCard = ({ singleService }) => {
   const {
+    _id,
     service,
     servicePhotoURL,
     short_description,
@@ -30,20 +31,12 @@ const ServiceCard = ({ singleService }) => {
           <h2 className="text-lg font-medium">Area : {serviceArea}</h2>
           <h2 className="text-lg font-medium">Provider: {providerName}</h2>
 
-          {/* <div>
-            <img
-              className="w-20 h-20 rounded-full"
-              src={providerPhotoURL}
-              alt=""
-            />
-            <h2 className="">{providerName}</h2>
-          </div> */}
+          
           <p>Description:</p>
           <p>{short_description}</p>
-          {/* <h2 className="card-title">{service}</h2> */}
-          {/* <Accordion description={short_description}></Accordion> */}
+      
           <div className="card-actions justify-end ">
-            <Link>
+            <Link to={`/services/${_id}`}>
               <button className="btn btn-primary">View Details</button>
             </Link>
           </div>
