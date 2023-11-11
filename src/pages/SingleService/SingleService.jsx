@@ -36,13 +36,15 @@ const SingleService = () => {
 
     const purchaseData = {
       productId,
+      providerName,
       service,
       servicePhotoURL,
       providerEmail,
       userEmail,
       date,
       price,
-      specialInstruction
+      specialInstruction,
+      status: "Pending"
     };
 
     console.log(purchaseData)
@@ -212,9 +214,9 @@ const SingleService = () => {
                   </label>
                   <textarea
                     name="specialInstruction"
-                    required
+                    // required
                     rows={5}
-                    placeholder="Write Special Instructions Here || Type None if there is No Special Instructions"
+                    placeholder="|| Write Special Instructions Here ||"
                     className="block w-full px-4 py-3 mt-2 text-gray-700 bg-white border-2 border-gray-300 rounded-sm   focus:border-yellow-300 focus:outline-none "
                   ></textarea>
                 </div>

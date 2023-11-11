@@ -9,6 +9,7 @@ import Services from "../pages/Services/Services";
 import SingleService from "../pages/SingleService/SingleService";
 import Myservices from "../pages/MyServices/Myservices";
 import UpdateService from "../pages/UpdateServices/UpdateService";
+import MySchedules from "../pages/MySchedules/MySchedules";
 
 
 
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
                 path:'/updateService/:id',
                 element:<PrivateRoute><UpdateService></UpdateService></PrivateRoute>,
                 loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+            },
+            {
+                path:'mySchedules',
+                element:<PrivateRoute><MySchedules></MySchedules></PrivateRoute>,
+               
             }
         ])
       },

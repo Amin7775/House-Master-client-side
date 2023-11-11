@@ -29,7 +29,8 @@ const AddService = () => {
             servicePhotoURL,
             price,
             serviceArea,
-            short_description
+            short_description,
+            status:"Pending"
         }
 
         console.log(addedService)
