@@ -10,18 +10,13 @@ import { useEffect, useState } from "react";
 
 const Home = () => {
     const loadedData = useLoaderData()
-    const [filterData,setFilterData]= useState([])
-
-    useEffect(()=>{
-        const filter = loadedData.slice(0,4)
-        setFilterData(filter)
-    },[loadedData])
+    
 
     // console.log(filter)
     return (
         <div className="bg-[#fbfbfa]">
             <Banner ></Banner>
-            <PopularServices filterData={filterData}></PopularServices>
+            <PopularServices filterData={loadedData}></PopularServices>
             {/* <Banner2></Banner2> */}
             <WhyChooseUs></WhyChooseUs>
             <HowItWorks></HowItWorks>

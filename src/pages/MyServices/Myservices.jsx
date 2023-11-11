@@ -28,14 +28,14 @@ const Myservices = () => {
 
             <div className="my-10">
             {
-                exist > 0 ? 
+                createdServices.length > 0 ? 
                 <div className="grid grid-cols-3 gap-8" >
                     {
                         createdServices.map(createdService => <MyServicesCard key={createdService._id} createdService={createdService}></MyServicesCard>)
                     }
                 </div> 
                 : 
-                <h1 className="text-center text-3xl mx-auto h-full my-auto">You Dont Have Services Added. <br />Please Add Services From Add Service Page</h1>
+                <h1 className="text-center text-3xl mx-auto h-full my-auto">You Do Not Have Any Services Added. <br />Please Add Services From Add Service Page</h1>
             }
             </div>
 

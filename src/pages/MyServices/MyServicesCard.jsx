@@ -20,15 +20,15 @@ const MyServicesCard = ({ createdService }) => {
       <div className="card-body">
         <h2 className="card-title">{service}</h2>
         <h2 className="card-title">Price : {price}/-BDT</h2>
-        <h2 className="card-title">Service : {serviceArea}</h2>
+        <h2 className="card-title">Service Area : {serviceArea}</h2>
 
         <div className="card-actions justify-center">
-          <Link>
+          <Link to={`/updateService/${_id}`}>
             <button className="btn bg-yellow-300 hover:bg-yellow-400">
               Update
             </button>
           </Link>
-          <Link>
+          <Link to={`/services/${_id}`}>
             <button className="btn bg-yellow-300 hover:bg-yellow-400">
               View Details
             </button>
