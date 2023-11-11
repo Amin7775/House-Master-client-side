@@ -14,7 +14,7 @@ const MyBookingsCard = ({ book,remainingBookedServices,setRemainingBookedService
   } = book;
 
   const handleDelete =(_id)=>{
-    console.log("clicked on ", _id)
+    // console.log("clicked on ", _id)
 
     fetch(`http://localhost:5000/booked/${_id}`, {
       method: "DELETE",

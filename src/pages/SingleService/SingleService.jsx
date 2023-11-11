@@ -44,7 +44,8 @@ const SingleService = () => {
       date,
       price,
       specialInstruction,
-      status: "Pending"
+      status: "Pending",
+      serviceArea
     };
 
     console.log(purchaseData)

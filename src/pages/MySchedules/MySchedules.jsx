@@ -1,5 +1,5 @@
-
 import MyBookings from "./MyBookings/MyBookings";
+import MyPendingWorks from "./MyPendingWorks/MyPendingWorks";
 
 const MySchedules = () => {
   
@@ -26,6 +26,9 @@ const MySchedules = () => {
         </div>
       <div className="container mx-auto">
         <MyBookings></MyBookings>
+      </div>
+      <div className="container mx-auto">
+        <MyPendingWorks></MyPendingWorks>
       </div>
     </div>
   );

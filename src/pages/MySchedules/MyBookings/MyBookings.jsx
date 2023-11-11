@@ -17,7 +17,7 @@ const MyBookings = () => {
     },[])
 
     return (
-        <div className="my-10 min-h-screen">
+        <div className="my-10 ">
             <h1 className="text-4xl text-center font-semibold">My Bookings</h1>
             {   booked.length>0 ?
                 <div className="grid grid-cols-2 gap-5 mt-10">
@@ -26,8 +26,8 @@ const MyBookings = () => {
                 }
             </div>
                 :
-                <div className="">
-                  <h1>You Do Not Have Any Booked Services</h1>  
+                <div>
+                  <h1 className="my-10 text-2xl text-red-500 font-medium text-center">You Have Not Booked/Purchased Any Services Yet. </h1> 
                 </div>
             }
         </div>
