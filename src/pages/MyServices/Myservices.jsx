@@ -8,12 +8,14 @@ const Myservices = () => {
     const { user } = useContext(AuthContext);
     console.log(user.email)
     const [createdServices, setCreatedServices] = useState([]);
+    const [allServices,setAllservices]=useState([])
     
 
     useEffect(() => {
         axios.get(`http://localhost:5000/services/data?email=${user?.email}`)
         .then(data=>{
             setCreatedServices(data.data)
+            setAllservices(data.data)
         })
       
     }, []);
@@ -31,7 +33,7 @@ const Myservices = () => {
                 createdServices.length > 0 ? 
                 <div className="grid grid-cols-3 gap-8" >
                     {
-                        createdServices.map(createdService => <MyServicesCard key={createdService._id} createdService={createdService}></MyServicesCard>)
+                        createdServices.map(createdService => <MyServicesCard key={createdService._id} createdService={createdService} setCreatedServices={setCreatedServices} allServices={allServices} setAllservices={setAllservices}></MyServicesCard>)
                     }
                 </div> 
                 : 

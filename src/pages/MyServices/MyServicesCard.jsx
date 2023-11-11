@@ -1,17 +1,32 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const MyServicesCard = ({ createdService }) => {
+const MyServicesCard = ({ createdService,setCreatedServices,allServices,setAllservices }) => {
+
+  // const [myServices,setMyservices] = useState(createdService)
   const {
     _id,
     service,
     servicePhotoURL,
-    short_description,
-    providerName,
-    providerPhotoURL,
+    // short_description,
+    // providerName,
+    // providerPhotoURL,
     price,
     serviceArea,
   } = createdService;
+
+
+  const handleDelete = (_id) =>{
+    console.log("clicked on ", _id)
+    axios.delete(`http://localhost:5000/services/${_id}`)
+    .then(res => {
+      console.log(res)
+      const remaining = allServices.filter(remainingService => remainingService._id !== _id)
+      setCreatedServices(remaining)
+      setAllservices(remaining)
+    })
+  }
   return (
     <div className="card card-compact  bg-base-100 shadow-xl">
       <figure>
@@ -33,7 +48,7 @@ const MyServicesCard = ({ createdService }) => {
               View Details
             </button>
           </Link>
-          <button className="btn bg-yellow-300 hover:bg-yellow-400">
+          <button onClick={()=>handleDelete(_id)} className="btn bg-yellow-300 hover:bg-yellow-400">
             Delete
           </button>
         </div>

@@ -50,8 +50,6 @@ const UpdateService = () => {
 
         axios.put(`http://localhost:5000/services/${_id}`,addedService)
         .then(res => console.log("update Success", res))
-
-    
         
     }
 
