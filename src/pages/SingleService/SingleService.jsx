@@ -4,6 +4,7 @@ import { AiOutlineLine } from "react-icons/ai";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const SingleService = () => {
   const loader = useLoaderData();
@@ -53,6 +54,12 @@ const SingleService = () => {
     axios.post("http://localhost:5000/booked",purchaseData)
     .then(res=>{
       console.log('res :>> ', res.data);
+      Swal.fire({
+        title: "Thank You For Booking This Service",
+        text: "You Can View You Booking Details On My Schedules Page",
+        icon: "success"
+      });
+      document.getElementById("my_modal_4").close();
     })
   };
 

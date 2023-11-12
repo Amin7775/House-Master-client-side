@@ -3,6 +3,9 @@ import AddServiceBanner from "./AddServiceBanner/AddServiceBanner";
 import { AiOutlineLine } from "react-icons/ai";
 import { AuthContext } from "../../provider/AuthProvider";
 import axios from "axios";
+import Swal from "sweetalert2";
+// import Swal from 'sweetalert2/dist/sweetalert2.js'
+// import 'sweetalert2/src/sweetalert2.scss'
 
 const AddService = () => {
   const { user } = useContext(AuthContext);
@@ -36,7 +39,22 @@ const AddService = () => {
         console.log(addedService)
 
         axios.post("http://localhost:5000/services",addedService)
-        .then(res => console.log(res.data))
+        .then(res => {
+          console.log(res);
+          Swal.fire({
+            title: "Service Added Successfully",
+            text: "Your Service Has Been Added and Others Can Now View It From Service Page",
+            icon: "success"
+          });
+          form.reset()
+        })
+        .catch(error => {
+          Swal.fire({
+            title: "There Was An Error Adding Your Service",
+            text: `Error: ${error.message}`,
+            icon: "success"
+          });
+        })
         
     }
 

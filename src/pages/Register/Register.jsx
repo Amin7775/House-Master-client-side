@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import RegisterBanner from "./RegisterBanner/RegisterBanner";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
@@ -24,11 +25,23 @@ const Register = () => {
         .then(UserDetails => {
           console.log(UserDetails.user)
           updateUser(name,photoURL)
-          .then(console.log("Profile Updated"))
+          .then(res=>{
+            console.log(res)
+          })
           .catch(error => console.log(error.message))
+          Swal.fire({
+            title: `Registration Success`,
+            text: `Thank you for registering with us,  ${UserDetails.user.email}`,
+            icon: "success"
+          });
         })
         .catch(error => {
-          console.log(error.message)
+          Swal.fire({
+            title: "Error",
+            text: `Error Details: ${error.message}`,
+            // text2: `Error Details: ${error.message}`,
+            icon: "error"
+          });
         })
     }
     

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import LoginBanner from "./LoginBanner/LoginBanner";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
 
@@ -14,14 +15,24 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(email,password)
+        // console.log(email,password)
 
         loginUser(email,password)
         .then(UserInfo =>{
-          console.log(UserInfo.user)
+          // console.log(UserInfo)
+          Swal.fire({
+            title: `Welcome Back, ${UserInfo.user.email}`,
+            icon: "success"
+          });
         })
         .catch(error=>{
-          console.log(error.message)
+          // console.log(error.message)
+          Swal.fire({
+            title: "Error",
+            text: `Error Details: ${error.message}`,
+            // text2: `Error Details: ${error.message}`,
+            icon: "error"
+          });
         })
     }
 

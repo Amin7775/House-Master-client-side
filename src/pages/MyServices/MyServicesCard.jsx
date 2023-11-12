@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyServicesCard = ({ createdService,setCreatedServices,allServices,setAllservices }) => {
 
@@ -19,13 +20,64 @@ const MyServicesCard = ({ createdService,setCreatedServices,allServices,setAllse
 
   const handleDelete = (_id) =>{
     console.log("clicked on ", _id)
-    axios.delete(`http://localhost:5000/services/${_id}`)
-    .then(res => {
-      console.log(res)
-      const remaining = allServices.filter(remainingService => remainingService._id !== _id)
-      setCreatedServices(remaining)
-      setAllservices(remaining)
-    })
+    // axios.delete(`http://localhost:5000/services/${_id}`)
+    
+    // .then(res => {
+    //   Swal.fire({
+    //     title: "Are you sure about deleting this service?",
+    //     text: "You won't be able to revert this!",
+    //     icon: "warning",
+    //     showCancelButton: true,
+    //     confirmButtonColor: "#3085d6",
+    //     cancelButtonColor: "#d33",
+    //     confirmButtonText: "Yes, delete it!"
+    //   }).then((result) => {
+    //     if (result.isConfirmed) {
+    //       const remaining = allServices.filter(remainingService => remainingService._id !== _id)
+    //       setCreatedServices(remaining)
+    //       setAllservices(remaining)
+
+    //       Swal.fire({
+    //         title: "Deleted!",
+    //         text: "Your Service  has been deleted.",
+    //         icon: "success"
+    //       })
+    //     }
+    //   });
+    //   // console.log(res)
+      
+    // })
+    
+      Swal.fire({
+        title: "Are you sure about deleting this service?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+
+          axios.delete(`http://localhost:5000/services/${_id}`)
+          .then(res =>{
+
+            const remaining = allServices.filter(remainingService => remainingService._id !== _id)
+            setCreatedServices(remaining)
+            setAllservices(remaining)
+            
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your Service  has been deleted.",
+              icon: "success"
+            })
+          })
+        }
+      });
+      // console.log(res)
+      
+    
+    
   }
   return (
     <div className="card card-compact  bg-base-100 shadow-xl">

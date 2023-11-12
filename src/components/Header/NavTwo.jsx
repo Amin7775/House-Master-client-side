@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import "./navtwo.css"
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const NavTwo = () => {
 
@@ -18,7 +19,12 @@ const NavTwo = () => {
   const handleLogout = () =>{
 
     logOut()
-    .then(console.log("Logout Success"))
+    .then(res => {
+      Swal.fire({
+        title: `Logout Success`,
+        icon: "success"
+      });
+    })
     .catch(error=> console.log(error.message))
   }
 
@@ -30,14 +36,18 @@ const NavTwo = () => {
       <li>
         <NavLink to={"/services"} className={"text-base font-semibold"}>Services</NavLink>
       </li>
-      <li>
+      {
+        user?.email ?<li onClick={handleLogout} className={"text-base font-semibold h-full my-auto hover:bg-base-300 px-2 py-2 rounded-lg cursor-pointer"}>
+        Logout
+      </li> :<li>
         <NavLink to={"/login"} className={"text-base font-semibold"}>Login</NavLink>
       </li>
-      {
+      }
+      {/* {
         user?.email && <li onClick={handleLogout} className={"text-base font-semibold h-full my-auto hover:bg-base-300 px-2 py-2 rounded-lg cursor-pointer"}>
         Logout
       </li>
-      }
+      } */}
       {
         user?.email && <li tabIndex={0}>
         <details>

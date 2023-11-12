@@ -5,6 +5,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 import axios from "axios";
 import UpdateServicesBanner from "./UpdateServicesBanner/UpdateServicesBanner";
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateService = () => {
   const { user } = useContext(AuthContext);
@@ -49,7 +50,22 @@ const UpdateService = () => {
         console.log(addedService)
 
         axios.put(`http://localhost:5000/services/${_id}`,addedService)
-        .then(res => console.log("update Success", res))
+        .then(res => {
+          console.log("update Success", res)
+          if(res?.data?.modifiedCount==1){
+            Swal.fire({
+              title: "Service Updated",
+              text: "Your Service Has Been Updated",
+              icon: "success"
+            });
+          }else{
+            Swal.fire({
+              title: "Update Failed",
+              text: "You Didn't Update Any Service Data",
+              icon: "error"
+            });
+          }
+        })
         
     }
 
