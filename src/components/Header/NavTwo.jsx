@@ -101,12 +101,14 @@ const NavTwo = () => {
           </ul>
         </div>
         <a className="btn btn-ghost normal-case text-xl py-1 h-full ">
+          <Link to={'/'}>
           <div className="flex items-center">
             <SiHomebridge className="text-5xl"></SiHomebridge>
             <span className="self-center whitespace-nowrap text-3xl font-extrabold dark:text-white">
               <span className="text-[#009579] ml-2">House</span> Master
             </span>
           </div>
+          </Link>
         </a>
       </div>
       <div className="navbar-center hidden lg:flex items-center" id="sidebar">

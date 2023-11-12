@@ -33,12 +33,12 @@ const Services = () => {
             <div className="pt-5 pb-10">
             {   
                 !showAll && <div className="flex justify-center">               
-                <button onClick={()=>setShowAll(!showAll)} className="btn bg-yellow-300 hover:bg-yellow-300">Show More</button>
+                <button onClick={()=>setShowAll(!showAll)} className="btn bg-yellow-300 hover:bg-yellow-400">Show More</button>
             </div>
             }
             {   
                 showAll && <div className="flex justify-center">               
-                <button onClick={()=>setShowAll(!showAll)} className="btn bg-yellow-300 hover:bg-yellow-300">Show Less</button>
+                <button onClick={()=>setShowAll(!showAll)} className="btn bg-yellow-300 hover:bg-yellow-400">Show Less</button>
             </div>
             }
             </div>

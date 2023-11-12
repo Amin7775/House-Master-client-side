@@ -10,6 +10,7 @@ import SingleService from "../pages/SingleService/SingleService";
 import Myservices from "../pages/MyServices/Myservices";
 import UpdateService from "../pages/UpdateServices/UpdateService";
 import MySchedules from "../pages/MySchedules/MySchedules";
+import ErrorPage from "../pages/error/ErrorPage";
 // import ErrorPage from "../pages/error/error";
 
 
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout></MainLayout>,
-        // errorElement:<ErrorPage></ErrorPage>,
+        errorElement: <ErrorPage></ErrorPage>,
         children:([
             {
                 path:'/',

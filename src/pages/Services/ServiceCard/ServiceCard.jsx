@@ -37,7 +37,7 @@ const ServiceCard = ({ singleService }) => {
       
           <div className="card-actions justify-end ">
             <Link to={`/services/${_id}`}>
-              <button className="btn btn-primary">View Details</button>
+              <button className="btn bg-yellow-300 hover:bg-yellow-400">View Details</button>
             </Link>
           </div>
         </div>
