@@ -2,6 +2,7 @@ import { AiOutlineLine } from "react-icons/ai";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Typewriter } from "react-simple-typewriter";
 // import img from "../../../assets/images/HowItWoks3.jpg";
 
 // https://i.ibb.co/JpGYNjC/cus-1.jpg
@@ -24,7 +25,7 @@ const Customer = () => {
           <AiOutlineLine className="inline"></AiOutlineLine> SOME HAPPY FACES
         </h1>
         <h1 className="mt-3 font-bold text-3xl ">
-          Real Happy Customers, Real Stories
+          Real <span className="text-red-500"><Typewriter words={['Happy Customers','Stories','Experiences','Testimonials']} loop={[100]}/></span>
         </h1>
       </div>
       <div className="container mx-auto md:max-h-[500px] bg-[#fbfbfa] px-2 md:px-0">
