@@ -6,7 +6,7 @@ const HowItWorks = () => {
             <h1 className="text-white text-center font-semibold text-2xl md:text-4xl pt-5">Easiest Way To Get Our Service</h1>
             <div className="container mx-auto flex flex-col lg:flex-row justify-center gap-5 lg:gap-10 items-center h-full pb-10">
             <div className="w-1/2 mt-16 lg:mt-0 md:2/3 lg:w-1/3 p-1">
-                <img src={howItWorks} alt="" />
+                <img src="https://i.ibb.co/NWQ9qSk/How-It-Woks3.jpg" alt="" />
             </div>
             <div className="flex flex-col gap-8 justify-start">
                 {/* first */}

@@ -4,7 +4,7 @@ import PopularServicesCard from "./PopularServicesCard";
 const PopularServices = ({ filterData }) => {
   console.log(filterData);
   return (
-    <div className="bg-[#f5f5f9] p-10">
+    <div className="bg-[#f5f5f9] p-5 md:p-10">
       <div className="container mx-auto">
         <h1 className="text-4xl text-center font-bold  mb-10">
           Popular Services
@@ -19,7 +19,7 @@ const PopularServices = ({ filterData }) => {
             <div className="flex flex-col shadow-sm">
               <div className="">
                 <img
-                  className="h-[400px] w-full"
+                  className="h-[200px] md:h-[400px] w-full"
                   src={filterData[0]?.servicePhotoURL}
                   alt=""
                 />
@@ -61,10 +61,10 @@ const PopularServices = ({ filterData }) => {
               </div>
             </div>
             {/* 2 */}
-            <div className="flex flex-col shadow-sm lg:border-4 md:border-t-4 border-r-0 border-b-0 border-yellow-300">
+            <div className="flex flex-col shadow-sm lg:border-4 lg:border-t-0 lg:border-r-0 lg:border-b-0 md:border-t-4 border-yellow-300">
               <div className="">
                 <img
-                  className="h-[400px] w-full"
+                  className="h-[200px] md:h-[400px] w-full"
                   src={filterData[1]?.servicePhotoURL}
                   alt=""
                 />
@@ -106,10 +106,10 @@ const PopularServices = ({ filterData }) => {
               </div>
             </div>
             {/* 3 */}
-            <div className="flex flex-col shadow-sm md:border-t-4 border-yellow-300">
+            <div className="flex flex-col shadow-sm md:border-t-4 md:border-b-4 lg:border-b-0 border-yellow-300">
               <div className="">
                 <img
-                  className="h-[400px] w-full"
+                  className="h-[200px] md:h-[400px] w-full"
                   src={filterData[2]?.servicePhotoURL}
                   alt=""
                 />
@@ -151,10 +151,10 @@ const PopularServices = ({ filterData }) => {
               </div>
             </div>
             {/* 4 */}
-            <div className="flex flex-col shadow-sm lg:border-4 md:border-t-4 border-r-0 border-b-0 border-yellow-300">
+            <div className="flex flex-col shadow-sm lg:border-4 lg:border-t-4 lg:border-r-0 lg:border-b-0 border-yellow-300">
               <div className="">
                 <img
-                  className="h-[400px] w-full"
+                  className="h-[200px] md:h-[400px] w-full"
                   src={filterData[0]?.servicePhotoURL}
                   alt=""
                 />

@@ -4,12 +4,12 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { GrTransaction } from "react-icons/gr";
 import { RiExchangeDollarFill } from "react-icons/ri";
 
-import image from "../../../assets/images/why choose us.jpg"
+
 
 const WhyChooseUs = () => {
     return (
         <div className="w-full bg-[#f5f5f9] pb-8 md:pb-16 ">
-            <div className="container mx-auto px-2 lg:px-0">
+            <div className="container mx-auto px-2 md:px-5 lg:px-0">
                 <h1 className="font-semibold"><AiOutlineLine className="inline"></AiOutlineLine> WHY CHOOSE US</h1>
                 <p className="text-2xl md:text-3xl font-bold">Because We Care About You</p>
                 <br />
@@ -40,7 +40,7 @@ const WhyChooseUs = () => {
                     </div>
                 </div>
                 <div className="md:col-span-1 px-2 md:px-2">
-                    <img className="" src={image} alt="" />
+                    <img className="" src="https://i.ibb.co/B3ZYD0p/why-choose-us.jpg" alt="" />
                 </div>
                 </div>
                 <div className="grid  grid-cols-3 md:h-32 mt-5  bg-yellow-300">
