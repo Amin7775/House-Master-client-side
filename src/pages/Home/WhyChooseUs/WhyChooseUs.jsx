@@ -4,6 +4,8 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { GrTransaction } from "react-icons/gr";
 import { RiExchangeDollarFill } from "react-icons/ri";
 import { Typewriter } from "react-simple-typewriter";
+import CountUp from 'react-countup';
+
 
 const WhyChooseUs = () => {
   return (
@@ -65,7 +67,7 @@ const WhyChooseUs = () => {
         <div className="grid  grid-cols-3 md:h-32 mt-5  bg-yellow-300">
           <div className="text-center my-auto border-r-2 md:border-r-4 border-black">
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
-              11,000 +
+            <CountUp  enableScrollSpy={true} scrollSpyDelay={500} start={0} end={100} duration={5}   suffix=" +" />
             </h1>
             <p className="text-base md:text-xl font-medium">
               Service Providers
@@ -73,13 +75,13 @@ const WhyChooseUs = () => {
           </div>
           <div className="text-center my-auto">
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
-              1,50,000 +
+            <CountUp delay={2} enableScrollSpy={true} scrollSpyDelay={500} start={100000} end={150000} duration={5}   suffix=" +" />
             </h1>
             <p className="text-base md:text-xl font-medium">Orders Served</p>
           </div>
           <div className="text-center my-auto border-l-4 border-black">
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold ">
-              1,15,600 +
+            <CountUp delay={2} enableScrollSpy={true} scrollSpyDelay={500} start={100000} end={119000} duration={5}   suffix=" +" />
             </h1>
             <p className="text-base md:text-xl font-medium">5 Start Received</p>
           </div>

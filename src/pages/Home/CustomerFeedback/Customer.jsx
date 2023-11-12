@@ -17,6 +17,10 @@ const Customer = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    // autoplay: true,
+    //   speed: 2000,
+    //   autoplaySpeed: 8000,
+      // cssEase: "linear"
   };
   return (
     <div className="md:h-[600px] bg-[#fbfbfa] px-2 md:px-7 max-w-[400px] md:max-w-full mx-auto  mb-0">
@@ -64,7 +68,7 @@ const Customer = () => {
                   requirements. The beautician arrived in time and was really
                   amazing. Thank you.
                 </p>
-                <h1 className="text-lg font-medium mt-3 md:mt-5">- - Zeba Fariba</h1>
+                <h1 className="text-lg font-medium mt-3 md:mt-5">- Zeba Fariba</h1>
                 <h1 className="text-sm md:mt-1 font-medium">Management Trainee</h1>
               </div>
               <img
