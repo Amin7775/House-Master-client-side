@@ -4,6 +4,7 @@ import { AiOutlineLine } from "react-icons/ai";
 import { AuthContext } from "../../provider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 // import Swal from 'sweetalert2/dist/sweetalert2.js'
 // import 'sweetalert2/src/sweetalert2.scss'
 
@@ -60,6 +61,9 @@ const AddService = () => {
 
   return (
     <div className="min-h-screen bg-[#fbfbfa]">
+      <Helmet>
+        <title>House Master | Add Service</title>
+      </Helmet>
       <AddServiceBanner></AddServiceBanner>
       {/* form */}
       <div className=" py-10 px-5 max-w-5xl mx-auto">

@@ -3,52 +3,53 @@ import RegisterBanner from "./RegisterBanner/RegisterBanner";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
-
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
+  const { createUser, updateUser } = useContext(AuthContext);
 
-  const {createUser,updateUser}= useContext(AuthContext)
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = e.target;
 
+    const name = form.name.value;
+    const photoURL = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
 
-    const handleRegister = e => {
-        e.preventDefault()
-        const form = e.target;
+    console.log(name, photoURL, email, password);
 
-        const name = form.name.value;
-        const photoURL = form.photo.value;
-        const email = form.email.value;
-        const password = form.password.value;
-
-        console.log(name,photoURL,email,password)
-
-        createUser(email,password)
-        .then(UserDetails => {
-          console.log(UserDetails.user)
-          updateUser(name,photoURL)
-          .then(res=>{
-            console.log(res)
+    createUser(email, password)
+      .then((UserDetails) => {
+        console.log(UserDetails.user);
+        updateUser(name, photoURL)
+          .then((res) => {
+            console.log(res);
           })
-          .catch(error => console.log(error.message))
-          Swal.fire({
-            title: `Registration Success`,
-            text: `Thank you for registering with us,  ${UserDetails.user.email}`,
-            icon: "success"
-          });
-        })
-        .catch(error => {
-          Swal.fire({
-            title: "Error",
-            text: `Error Details: ${error.message}`,
-            // text2: `Error Details: ${error.message}`,
-            icon: "error"
-          });
-        })
-    }
-    
-    return (
-        <div className="min-h-screen bg-[#fbfbfa]">
-            <RegisterBanner></RegisterBanner>
-            {/* form */}
+          .catch((error) => console.log(error.message));
+        Swal.fire({
+          title: `Registration Success`,
+          text: `Thank you for registering with us,  ${UserDetails.user.email}`,
+          icon: "success",
+        });
+      })
+      .catch((error) => {
+        Swal.fire({
+          title: "Error",
+          text: `Error Details: ${error.message}`,
+          // text2: `Error Details: ${error.message}`,
+          icon: "error",
+        });
+      });
+  };
+
+  return (
+    <div className="min-h-screen bg-[#fbfbfa]">
+      <Helmet>
+        <title>House Master | Register</title>
+      </Helmet>
+      <RegisterBanner></RegisterBanner>
+      {/* form */}
       <div className=" py-10 px-5 max-w-2xl mx-auto">
         <h2 className="text-3xl font-semibold text-gray-700 capitalize dark:text-white text-center ">
           Register Here
@@ -65,7 +66,9 @@ const Register = () => {
               />
             </div>
             <div className="w-full">
-              <label className="text-gray-700 dark:text-gray-200">Photo URL</label>
+              <label className="text-gray-700 dark:text-gray-200">
+                Photo URL
+              </label>
               <input
                 required
                 name="photo"
@@ -105,22 +108,22 @@ const Register = () => {
           </div>
         </form>
         <div className="mt-6 space-y-2">
-        <p className="text-center mt-2">
-                  Register With Google ?{" "}
-                  <span className="text-blue-600 cursor-pointer font-medium">
-                    Click Here
-                  </span>
-                </p>
-                <p className="text-center">
-                  Already Have An Account ?{" "}
-                  <span className="text-blue-600 font-medium">
-                    <Link to={"/login"}>Click Here To Login</Link>
-                  </span>
-                </p>
+          <p className="text-center mt-2">
+            Register With Google ?{" "}
+            <span className="text-blue-600 cursor-pointer font-medium">
+              Click Here
+            </span>
+          </p>
+          <p className="text-center">
+            Already Have An Account ?{" "}
+            <span className="text-blue-600 font-medium">
+              <Link to={"/login"}>Click Here To Login</Link>
+            </span>
+          </p>
         </div>
       </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Register;

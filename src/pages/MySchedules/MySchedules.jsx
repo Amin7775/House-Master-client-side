@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import MyBookings from "./MyBookings/MyBookings";
 import MyPendingWorks from "./MyPendingWorks/MyPendingWorks";
 
@@ -5,6 +6,9 @@ const MySchedules = () => {
   
   return (
     <div className="bg-[#fbfbfa] min-h-screen">
+      <Helmet>
+        <title>House Master | My Schedules</title>
+      </Helmet>
       {/* banner */}
       <div
           className="hero h-[400px]"

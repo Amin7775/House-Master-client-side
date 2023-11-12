@@ -3,6 +3,7 @@ import LoginBanner from "./LoginBanner/LoginBanner";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
 
@@ -49,6 +50,9 @@ const Login = () => {
 
   return (
     <div className="min-h-screen bg-[#fbfbfa]">
+      <Helmet>
+        <title>House Master | Login</title>
+      </Helmet>
       <LoginBanner></LoginBanner>
       {/* form */}
       <div className=" py-10 px-5 max-w-2xl mx-auto">

@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const SingleService = () => {
   const loader = useLoaderData();
@@ -65,6 +66,9 @@ const SingleService = () => {
 
   return (
     <div className="bg-[#fbfbfa] min-h-screen">
+      <Helmet>
+        <title>House Master | Service Details</title>
+      </Helmet>
       <SingleServiceBanner> </SingleServiceBanner>
 
       {/* single service */}

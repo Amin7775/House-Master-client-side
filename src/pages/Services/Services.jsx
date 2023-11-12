@@ -3,6 +3,7 @@ import ServicesBanner from "./ServicesBanner/ServicesBanner";
 import ServicesSearch from "./ServicesSearch/ServicesSearch";
 import ServiceCard from "./ServiceCard/ServiceCard";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Services = () => {
     const [services,setServices] = useState([])
@@ -26,6 +27,9 @@ const Services = () => {
 
     return (
         <div className="min-h-screen bg-[#fbfbfa]">
+          <Helmet>
+        <title>House Master | Services</title>
+      </Helmet>
             <ServicesBanner></ServicesBanner>
             <ServicesSearch services={services} setServices={setServices}></ServicesSearch>
             {services.map(singleService=> <ServiceCard key={singleService._id} singleService={singleService}></ServiceCard>)}

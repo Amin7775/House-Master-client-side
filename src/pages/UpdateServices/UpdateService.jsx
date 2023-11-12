@@ -6,6 +6,7 @@ import axios from "axios";
 import UpdateServicesBanner from "./UpdateServicesBanner/UpdateServicesBanner";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const UpdateService = () => {
   const { user } = useContext(AuthContext);
@@ -71,6 +72,9 @@ const UpdateService = () => {
 
   return (
     <div className="min-h-screen bg-[#fbfbfa]">
+      <Helmet>
+        <title>House Master | Update Service</title>
+      </Helmet>
       <UpdateServicesBanner></UpdateServicesBanner>
       {/* form */}
       <div className=" py-10 px-5 max-w-5xl mx-auto">
