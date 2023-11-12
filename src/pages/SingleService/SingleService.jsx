@@ -1,11 +1,12 @@
 import { useLoaderData } from "react-router-dom";
 import SingleServiceBanner from "./SingleServiceBanner/SingleServiceBanner";
 import { AiOutlineLine } from "react-icons/ai";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import SameProvider from "./SameProvider/SameProvider";
 
 const SingleService = () => {
   const loader = useLoaderData();
@@ -21,7 +22,7 @@ const SingleService = () => {
     serviceArea,
     providerEmail,
   } = loader;
-  console.log(loader);
+  // console.log(loader);
 
   //handlePurchase
   const handlePurchase = (e) => {
@@ -64,6 +65,26 @@ const SingleService = () => {
     })
   };
 
+  //other services from same provider
+  const [sameProviderService,setSameProviderService] = useState([])
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/services/data?email=${providerEmail}`)
+      .then((data) => {
+        const allData = data.data
+        
+        const filter=allData.filter(sameService => sameService._id !== _id)
+        setSameProviderService(filter)
+      });
+  }, []);
+
+  // useEffect(()=>{
+    
+        
+  // },[])
+
+  console.log("Loading",sameProviderService)
   return (
     <div className="bg-[#fbfbfa] min-h-screen">
       <Helmet>
@@ -124,6 +145,25 @@ const SingleService = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Other Services */}
+      <div className="container mx-auto py-10 w-full">
+                  
+                  {
+                    sameProviderService.length > 0 ? <div className="mb-10">
+                      <h1 className="text-center text-4xl font-medium mb-20">Other Services From The  Provider : ({providerName})</h1>
+
+                      <div className="grid grid-cols-3 gap-16">
+                        {
+                          sameProviderService.map(ServiceDetails => <SameProvider key={ServiceDetails._key} ServiceDetails={ServiceDetails} setSameProviderService={setSameProviderService} sameProviderService={sameProviderService}></SameProvider>)
+                        }
+                      </div>
+                    </div> :
+                    <div>
+                      <h1 className="text-center text-4xl pb-10 font-medium">No Other Service Available From This Provider : ({providerName})</h1>
+                    </div>
+                  }
       </div>
 
       {/* You can open the modal using document.getElementById('ID').showModal() method */}

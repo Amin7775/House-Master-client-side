@@ -29,13 +29,13 @@ const Myservices = () => {
       <MyServicesBanner></MyServicesBanner>
 
       <div className="container mx-auto">
-        <h1 className="text-center text-4xl font-medium mt-5 h-full">
+        <h1 className="text-center text-4xl font-medium mt-10 h-full">
           Manage Services
         </h1>
 
-        <div className="my-10">
+        <div className="my-16">
           {createdServices.length > 0 ? (
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid grid-cols-3 gap-16">
               {createdServices.map((createdService) => (
                 <MyServicesCard
                   key={createdService._id}
