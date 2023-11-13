@@ -4,10 +4,11 @@ import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import axios from "axios";
 
 const Login = () => {
 
-  const {loginUser,googleRegister,setPic} = useContext(AuthContext)
+  const {user,loginUser,googleRegister,setPic} = useContext(AuthContext)
 
     const handleLogin = e => {
         e.preventDefault()
@@ -17,14 +18,23 @@ const Login = () => {
         const password = form.password.value;
 
         // console.log(email,password)
-
+        
         loginUser(email,password)
         .then(UserInfo =>{
           // console.log(UserInfo)
           Swal.fire({
             title: `Welcome Back, ${UserInfo.user.email}`,
             icon: "success"
-          });
+          })
+          .then(res=> {
+            axios.post('http://localhost:5000/jwt',user,{withCredentials:true})
+                .then(res=>{
+                    console.log(res)
+                    // if(res.data.success){
+                    //     navigate(location?.state ? location?.state : '/')
+                    // }
+                })
+          })
         })
         .catch(error=>{
           // console.log(error.message)
@@ -35,6 +45,7 @@ const Login = () => {
             icon: "error"
           });
         })
+        form.reset();
     }
 
     const handleGoogle = () =>{

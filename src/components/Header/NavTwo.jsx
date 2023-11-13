@@ -5,6 +5,7 @@ import "./navtwo.css"
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
+// import axios from "axios";
 
 const NavTwo = () => {
 
@@ -23,7 +24,10 @@ const NavTwo = () => {
       Swal.fire({
         title: `Logout Success`,
         icon: "success"
-      });
+      })
+      // .then(res=>{
+      //   axios.post('http://localhost:5000/logout',user)
+      // })
     })
     .catch(error=> console.log(error.message))
   }
