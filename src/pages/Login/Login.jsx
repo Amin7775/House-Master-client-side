@@ -88,7 +88,7 @@ const Login = () => {
               <input
                 required
                 name="password"
-                type="text"
+                type="password"
                 className="block w-full px-4 py-3 mt-2 text-gray-700 border-2 bg-white rounded-sm  focus:border-yellow-300  focus:outline-none "
               />
             </div>
