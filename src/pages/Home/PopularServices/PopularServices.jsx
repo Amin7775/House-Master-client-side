@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import PopularServicesCard from "./PopularServicesCard";
 
 const PopularServices = ({ filterData }) => {
-  console.log(filterData);
+  // console.log(filterData);
   return (
     <div className="bg-[#f5f5f9] p-5 md:p-10">
       <div className="container mx-auto">

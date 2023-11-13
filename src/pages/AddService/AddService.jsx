@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet-async";
 const AddService = () => {
   const { user } = useContext(AuthContext);
   const { displayName, email, photoURL } = user;
-  console.log(user.displayName);
+  // console.log(user.displayName);
 
     const handleAddService = e =>{
         e.preventDefault()
@@ -37,11 +37,11 @@ const AddService = () => {
             status:"Pending"
         }
 
-        console.log(addedService)
+        // console.log(addedService)
 
         axios.post("https://house-master-server.vercel.app/services",addedService)
         .then(res => {
-          console.log(res);
+          // console.log(res);
           Swal.fire({
             title: "Service Added Successfully",
             text: "Your Service Has Been Added and Others Can Now View It From Service Page",

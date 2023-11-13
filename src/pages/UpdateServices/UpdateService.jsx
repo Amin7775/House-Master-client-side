@@ -12,7 +12,7 @@ const UpdateService = () => {
   const { user } = useContext(AuthContext);
   const { photoURL } = user;
   const serviceData = useLoaderData()
-  console.log(serviceData)
+  // console.log(serviceData)
   const {
     _id,
     price,
@@ -48,11 +48,11 @@ const UpdateService = () => {
             short_description
         }
 
-        console.log(addedService)
+        // console.log(addedService)
 
         axios.put(`https://house-master-server.vercel.app/services/${_id}`,addedService)
         .then(res => {
-          console.log("update Success", res)
+          // console.log("update Success", res)
           if(res?.data?.modifiedCount==1){
             Swal.fire({
               title: "Service Updated",

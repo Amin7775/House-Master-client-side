@@ -51,7 +51,7 @@ const SingleService = () => {
       serviceArea
     };
 
-    console.log(purchaseData)
+    // console.log(purchaseData)
 
     axios.post("https://house-master-server.vercel.app/booked",purchaseData)
     .then(res=>{
@@ -84,7 +84,7 @@ const SingleService = () => {
         
   // },[])
 
-  console.log("Loading",sameProviderService)
+  // console.log("Loading",sameProviderService)
   return (
     <div className="bg-[#fbfbfa] min-h-screen">
       <Helmet>

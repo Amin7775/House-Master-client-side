@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet-async";
 
 const Myservices = () => {
   const { user } = useContext(AuthContext);
-  console.log(user.email);
+  // console.log(user.email);
   const [createdServices, setCreatedServices] = useState([]);
   const [allServices, setAllservices] = useState([]);
 
@@ -19,8 +19,8 @@ const Myservices = () => {
         setAllservices(data.data);
       });
   }, []);
-  const exist = createdServices.length;
-  console.log(exist);
+  // const exist = createdServices.length;
+  // console.log(exist);
   return (
     <div className="bg-[#fbfbfa] min-h-screen">
       <Helmet>

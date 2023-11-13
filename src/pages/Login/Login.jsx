@@ -30,7 +30,7 @@ const Login = () => {
             icon: "success"
           })
           .then(res=> {
-            console.log('FOR',res)
+            // console.log('FOR',res)
             axios.post('https://house-master-server.vercel.app/jwt',user,{withCredentials:true})
                 .then(res=>{
                     console.log(res)
@@ -55,7 +55,7 @@ const Login = () => {
     const handleGoogle = () =>{
       googleRegister()
       .then(userDetails => {
-        console.log(userDetails.user)
+        // console.log(userDetails.user)
         setPic(userDetails.user.photoURL)
       })
       .catch(error=>{

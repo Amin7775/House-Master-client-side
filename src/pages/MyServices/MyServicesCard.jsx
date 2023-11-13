@@ -19,7 +19,7 @@ const MyServicesCard = ({ createdService,setCreatedServices,allServices,setAllse
 
 
   const handleDelete = (_id) =>{
-    console.log("clicked on ", _id)
+    // console.log("clicked on ", _id)
     // axios.delete(`https://house-master-server.vercel.app/services/${_id}`)
     
     // .then(res => {

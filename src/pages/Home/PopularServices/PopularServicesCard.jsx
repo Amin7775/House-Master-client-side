@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 
 const PopularServicesCard = ({filterData}) => {
-    console.log(filterData[0])
+    // console.log(filterData[0])
     const settings = {
         dots: true,
         infinite: true,

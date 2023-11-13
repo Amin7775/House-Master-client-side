@@ -16,7 +16,7 @@ const TableRow = ({book,booked,setBooked}) => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             if(data.modifiedCount > 0){
                 const remaining = booked.filter(booking => booking._id !== id)
                 const updated = booked.find(booking => booking._id == id)

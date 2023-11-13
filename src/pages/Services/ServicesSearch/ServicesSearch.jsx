@@ -7,14 +7,14 @@ const ServicesSearch = ({services,setServices}) => {
     axios('https://house-master-server.vercel.app/services')
     .then(res =>  setPreloadedData(res.data))
   },[])
-console.log(preloadedData);
+// console.log(preloadedData);
 
   const handleSearch= e =>{
     e.preventDefault();
     const searchInput = e.target.search.value;
-    console.log(searchInput)
+    // console.log(searchInput)
     const filter = services.filter(serVice => serVice.service.toLowerCase().includes(searchInput))
-    console.log(filter)
+    // console.log(filter)
     setServices(filter)
     if(!searchInput){
       setServices(preloadedData)

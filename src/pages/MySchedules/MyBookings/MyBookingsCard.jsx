@@ -55,7 +55,7 @@ const MyBookingsCard = ({
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             if (data.deletedCount > 0) {
               const remaining = remainingBookedServices.filter(
                 (remainingBookedService) => remainingBookedService._id !== _id
