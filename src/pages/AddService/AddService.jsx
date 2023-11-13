@@ -39,7 +39,7 @@ const AddService = () => {
 
         console.log(addedService)
 
-        axios.post("http://localhost:5000/services",addedService)
+        axios.post("https://house-master-server.vercel.app/services",addedService)
         .then(res => {
           console.log(res);
           Swal.fire({

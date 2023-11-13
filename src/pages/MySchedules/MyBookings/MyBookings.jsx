@@ -8,7 +8,7 @@ const MyBookings = () => {
     const [remainingBookedServices,setRemainingBookedServices]=useState([])
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/booked?email=${user?.email}`)
+        fetch(`https://house-master-server.vercel.app/booked?email=${user?.email}`)
         .then(res => res.json())
         .then(data => {
             setBooked(data)

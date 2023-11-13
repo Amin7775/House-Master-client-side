@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const ServicesSearch = ({services,setServices}) => {
   const [preloadedData,setPreloadedData] = useState([]);
   useEffect(()=>{
-    axios('http://localhost:5000/services')
+    axios('https://house-master-server.vercel.app/services')
     .then(res =>  setPreloadedData(res.data))
   },[])
 console.log(preloadedData);

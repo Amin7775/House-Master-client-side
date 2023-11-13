@@ -13,7 +13,7 @@ const Myservices = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/services/data?email=${user?.email}`)
+      .get(`https://house-master-server.vercel.app/services/data?email=${user?.email}`)
       .then((data) => {
         setCreatedServices(data.data);
         setAllservices(data.data);

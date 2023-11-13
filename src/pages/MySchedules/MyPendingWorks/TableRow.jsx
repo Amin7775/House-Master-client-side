@@ -7,7 +7,7 @@ const TableRow = ({book,booked,setBooked}) => {
         const updatedStatus = e.target.bookingStatus.value;
         const id = book._id;
     
-        fetch(`http://localhost:5000/booked/update/${id}`, {
+        fetch(`https://house-master-server.vercel.app/booked/update/${id}`, {
           method: "PATCH",
           headers: {
             'Content-Type': 'application/json',

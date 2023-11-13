@@ -26,7 +26,7 @@ const NavTwo = () => {
         icon: "success"
       })
       // .then(res=>{
-      //   axios.post('http://localhost:5000/logout',user)
+      //   axios.post('https://house-master-server.vercel.app/logout',user)
       // })
     })
     .catch(error=> console.log(error.message))

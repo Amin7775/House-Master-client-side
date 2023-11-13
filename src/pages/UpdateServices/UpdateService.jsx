@@ -50,7 +50,7 @@ const UpdateService = () => {
 
         console.log(addedService)
 
-        axios.put(`http://localhost:5000/services/${_id}`,addedService)
+        axios.put(`https://house-master-server.vercel.app/services/${_id}`,addedService)
         .then(res => {
           console.log("update Success", res)
           if(res?.data?.modifiedCount==1){

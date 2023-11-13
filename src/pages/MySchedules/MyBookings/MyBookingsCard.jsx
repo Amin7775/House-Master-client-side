@@ -23,7 +23,7 @@ const MyBookingsCard = ({
   const handleDelete = (_id) => {
     // console.log("clicked on ", _id)
 
-    // fetch(`http://localhost:5000/booked/${_id}`, {
+    // fetch(`https://house-master-server.vercel.app/booked/${_id}`, {
     //   method: "DELETE",
     // })
     //   .then((res) => res.json())
@@ -50,7 +50,7 @@ const MyBookingsCard = ({
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/booked/${_id}`, {
+        fetch(`https://house-master-server.vercel.app/booked/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

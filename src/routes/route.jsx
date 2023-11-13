@@ -24,7 +24,7 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element: <Home></Home>,
-                loader: ()=>fetch('http://localhost:5000/services/home')
+                loader: ()=>fetch('https://house-master-server.vercel.app/services/home')
             },
             {
                 path: '/login',
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
             {
                 path:'/services/:id',
                 element: <PrivateRoute><SingleService></SingleService></PrivateRoute>,
-                loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({params})=>fetch(`https://house-master-server.vercel.app/services/${params.id}`)
             },
             {
                 path:'/myservices',
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
             {
                 path:'/updateService/:id',
                 element:<PrivateRoute><UpdateService></UpdateService></PrivateRoute>,
-                loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({params})=>fetch(`https://house-master-server.vercel.app/services/${params.id}`)
             },
             {
                 path:'mySchedules',

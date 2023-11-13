@@ -10,7 +10,7 @@ const Services = () => {
     const [showAll , setShowAll] = useState(false)
     // console.log('showAll :>> ', showAll);
     useEffect(() => {
-    axios('http://localhost:5000/services')
+    axios('https://house-master-server.vercel.app/services')
       .then(res => {
         if (!showAll) {
           const filteredServices = res.data.slice(0, 6);

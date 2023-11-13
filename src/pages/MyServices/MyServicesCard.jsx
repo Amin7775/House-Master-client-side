@@ -20,7 +20,7 @@ const MyServicesCard = ({ createdService,setCreatedServices,allServices,setAllse
 
   const handleDelete = (_id) =>{
     console.log("clicked on ", _id)
-    // axios.delete(`http://localhost:5000/services/${_id}`)
+    // axios.delete(`https://house-master-server.vercel.app/services/${_id}`)
     
     // .then(res => {
     //   Swal.fire({
@@ -59,7 +59,7 @@ const MyServicesCard = ({ createdService,setCreatedServices,allServices,setAllse
       }).then((result) => {
         if (result.isConfirmed) {
 
-          axios.delete(`http://localhost:5000/services/${_id}`)
+          axios.delete(`https://house-master-server.vercel.app/services/${_id}`)
           .then(res =>{
 
             const remaining = allServices.filter(remainingService => remainingService._id !== _id)

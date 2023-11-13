@@ -11,7 +11,7 @@ const SameProvider = ({ServiceDetails,setSameProviderService}) => {
 
     useEffect(() => {
         axios
-          .get(`http://localhost:5000/services/data?email=${providerEmail}`)
+          .get(`https://house-master-server.vercel.app/services/data?email=${providerEmail}`)
           .then((data) => {
             setAllData(data.data)
           });

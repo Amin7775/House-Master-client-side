@@ -53,7 +53,7 @@ const SingleService = () => {
 
     console.log(purchaseData)
 
-    axios.post("http://localhost:5000/booked",purchaseData)
+    axios.post("https://house-master-server.vercel.app/booked",purchaseData)
     .then(res=>{
       console.log('res :>> ', res.data);
       Swal.fire({
@@ -70,7 +70,7 @@ const SingleService = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/services/data?email=${providerEmail}`)
+      .get(`https://house-master-server.vercel.app/services/data?email=${providerEmail}`)
       .then((data) => {
         const allData = data.data
         
