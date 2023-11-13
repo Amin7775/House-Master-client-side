@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import LoginBanner from "./LoginBanner/LoginBanner";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
@@ -9,6 +9,9 @@ import axios from "axios";
 const Login = () => {
 
   const {user,loginUser,googleRegister,setPic} = useContext(AuthContext)
+
+  const location = useLocation()
+  const navigate = useNavigate()
 
     const handleLogin = e => {
         e.preventDefault()
@@ -27,13 +30,14 @@ const Login = () => {
             icon: "success"
           })
           .then(res=> {
+            console.log('FOR',res)
             axios.post('https://house-master-server.vercel.app/jwt',user,{withCredentials:true})
                 .then(res=>{
                     console.log(res)
-                    // if(res.data.success){
-                    //     navigate(location?.state ? location?.state : '/')
-                    // }
-                })
+                  })
+                  if(res.isConfirmed == true){
+                      navigate(location?.state ? location?.state : '/')
+                  }
           })
         })
         .catch(error=>{

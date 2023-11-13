@@ -1,6 +1,6 @@
 // import { RiHomeLine } from "react-icons/ri";
 import { SiHomebridge } from "react-icons/si";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./navtwo.css"
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
@@ -16,7 +16,7 @@ const NavTwo = () => {
   }, [photo]);
 
   // console.log(user, "from nav")
-
+  const navigate = useNavigate()
   const handleLogout = () =>{
 
     logOut()
@@ -25,9 +25,11 @@ const NavTwo = () => {
         title: `Logout Success`,
         icon: "success"
       })
-      // .then(res=>{
-      //   axios.post('https://house-master-server.vercel.app/logout',user)
-      // })
+      .then(res=>{
+        if(res.isConfirmed == true){
+          navigate('/')
+        }
+      })
     })
     .catch(error=> console.log(error.message))
   }

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import RegisterBanner from "./RegisterBanner/RegisterBanner";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser, updateUser } = useContext(AuthContext);
-
+  const navigate = useNavigate()
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -31,7 +31,12 @@ const Register = () => {
           title: `Registration Success`,
           text: `Thank you for registering with us,  ${UserDetails.user.email}`,
           icon: "success",
-        });
+        })
+        .then(res=>{
+          if(res.isConfirmed == true){
+            navigate('/')
+          }
+        })
       })
       .catch((error) => {
         Swal.fire({
