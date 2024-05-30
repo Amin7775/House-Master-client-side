@@ -21,11 +21,11 @@ const PopularServicesCard = ({filterData}) => {
             <div className="grid grid-cols-2">
 
           <div>
-                    <img className=" w-full" src={filterData[0]?.servicePhotoURL} alt="" />
+                    <img className=" w-full" src={filterData?.servicePhotoURL} alt="" />
             </div>
                 <div className="flex h-full flex-col justify-center">
                     <div className="px-10">
-                    <h1 className="text-5xl font-bold border-b-8 pb-1 border-yellow-300 inline">{filterData[0]?.service}</h1>
+                    <h1 className="text-5xl font-bold border-b-8 pb-1 border-yellow-300 inline">{filterData?.service}</h1>
                     </div>
                 </div>
             </div>

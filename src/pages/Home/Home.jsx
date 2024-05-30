@@ -6,6 +6,7 @@ import WhyChooseUs from "./WhyChooseUs/WhyChooseUs";
 import PopularServices from "./PopularServices/PopularServices";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import Banner2 from "./Banner/Banner2";
 // import Banner2 from "./Banner/Banner2";
 
 const Home = () => {
@@ -18,7 +19,7 @@ const Home = () => {
         <title>House Master | Home</title>
       </Helmet>
       <Banner></Banner>
-      <PopularServices filterData={loadedData}></PopularServices>
+      {/* <PopularServices filterData={loadedData}></PopularServices> */}
       {/* <Banner2></Banner2> */}
       <WhyChooseUs></WhyChooseUs>
       <HowItWorks></HowItWorks>

@@ -67,7 +67,7 @@ const AddService = () => {
       <AddServiceBanner></AddServiceBanner>
       {/* form */}
       <div className=" py-10 px-5 max-w-5xl mx-auto">
-        <h2 className="text-3xl font-semibold text-gray-700 capitalize dark:text-white text-center ">
+        <h2 className="text-3xl font-semibold text-gray-700 capitalize  text-center ">
           Add Service Informations 
         </h2>
         <form onSubmit={handleAddService}>
@@ -78,7 +78,7 @@ const AddService = () => {
           <div className="grid grid-cols-2 gap-6 mt-4 ">
             {/* provider name */}
             <div className="w-full">
-              <label className="text-gray-700 dark:text-gray-200">
+              <label className="text-gray-700 ">
                 Provider Name
               </label>
               <input
@@ -92,7 +92,7 @@ const AddService = () => {
             </div>
             {/*Provider email */}
             <div className="w-full">
-              <label className="text-gray-700 dark:text-gray-200">Email</label>
+              <label className="text-gray-700 ">Email</label>
               <input
                 required
                 readOnly
@@ -104,7 +104,7 @@ const AddService = () => {
             </div>
             {/* Provider pictureURL */}
             <div className="w-full">
-              <label className="text-gray-700 dark:text-gray-200">
+              <label className="text-gray-700 ">
                 PhotoURL
               </label>
               <input
@@ -126,7 +126,7 @@ const AddService = () => {
           <div className="grid grid-cols-2 gap-6 mt-4 ">
             {/* service name */}
             <div className="w-full">
-              <label className="text-gray-700 dark:text-gray-200">
+              <label className="text-gray-700 ">
                 Service Name
               </label>
               <input
@@ -139,7 +139,7 @@ const AddService = () => {
             </div>
             {/*Service PhotoURL */}
             <div className="w-full">
-              <label className="text-gray-700 dark:text-gray-200">
+              <label className="text-gray-700 ">
                 Service PhotoURL
               </label>
               <input
@@ -152,7 +152,7 @@ const AddService = () => {
             </div>
             {/* Service Price */}
             <div className="w-full">
-              <label className="text-gray-700 dark:text-gray-200">
+              <label className="text-gray-700 ">
                 Service Price
               </label>
               <input
@@ -164,7 +164,7 @@ const AddService = () => {
               />
             </div>
             <div className="w-full">
-              <label className="text-gray-700 dark:text-gray-200">
+              <label className="text-gray-700 ">
                 Service Area
               </label>
               <input
@@ -176,7 +176,7 @@ const AddService = () => {
               />
             </div>
             <div className="md:col-span-2">
-              <label className="text-gray-700 dark:text-gray-200">
+              <label className="text-gray-700 ">
                 Service Description
               </label>
               <textarea

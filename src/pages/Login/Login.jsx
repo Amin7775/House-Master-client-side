@@ -71,13 +71,13 @@ const Login = () => {
       <LoginBanner></LoginBanner>
       {/* form */}
       <div className=" py-10 px-5 max-w-2xl mx-auto">
-        <h2 className="text-3xl font-semibold text-gray-700 capitalize dark:text-white text-center ">
+        <h2 className="text-3xl font-semibold text-gray-700 capitalize  text-center ">
           Login
         </h2>
         <form onSubmit={handleLogin}>
           <div className="grid grid-cols-1 gap-6 mt-4 ">
             <div className="w-full">
-              <label className="text-gray-700 dark:text-gray-200">Email</label>
+              <label className="text-gray-700 ">Email</label>
               <input
                 required
                 name="email"
@@ -86,7 +86,7 @@ const Login = () => {
               />
             </div>
             <div className="w-full">
-              <label className="text-gray-700 dark:text-gray-200">
+              <label className="text-gray-700 ">
                 Password
               </label>
               <input

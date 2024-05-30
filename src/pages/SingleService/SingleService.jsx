@@ -177,7 +177,7 @@ const SingleService = () => {
             <form onSubmit={handlePurchase}>
               <div className="grid grid-cols-2 gap-6 mt-4 ">
                 <div className="w-full">
-                  <label className="text-gray-700 dark:text-gray-200">
+                  <label className="text-gray-700  ">
                     Service Name
                   </label>
                   <input
@@ -191,7 +191,7 @@ const SingleService = () => {
                 </div>
                 {/*Service PhotoURL */}
                 <div className="w-full">
-                  <label className="text-gray-700 dark:text-gray-200">
+                  <label className="text-gray-700  ">
                     Service PhotoURL
                   </label>
                   <input
@@ -205,7 +205,7 @@ const SingleService = () => {
                 </div>
                 {/*Provider email */}
                 <div className="w-full">
-                  <label className="text-gray-700 dark:text-gray-200">
+                  <label className="text-gray-700  ">
                     Service Provider Email
                   </label>
                   <input
@@ -219,7 +219,7 @@ const SingleService = () => {
                 </div>
                 {/*User email */}
                 <div className="w-full">
-                  <label className="text-gray-700 dark:text-gray-200">
+                  <label className="text-gray-700  ">
                     User Email
                   </label>
                   <input
@@ -233,7 +233,7 @@ const SingleService = () => {
                 </div>
                 {/* Service Taking Date */}
                 <div className="w-full">
-                  <label className="text-gray-700 dark:text-gray-200">
+                  <label className="text-gray-700  ">
                     Service Taking Date
                   </label>
                   <input
@@ -246,7 +246,7 @@ const SingleService = () => {
                 </div>
                 {/* Service Price */}
                 <div className="w-full">
-                  <label className="text-gray-700 dark:text-gray-200">
+                  <label className="text-gray-700  ">
                     Service Price
                   </label>
                   <input
@@ -261,7 +261,7 @@ const SingleService = () => {
                 </div>
 
                 <div className="md:col-span-2">
-                  <label className="text-gray-700 dark:text-gray-200">
+                  <label className="text-gray-700  ">
                     Special Instructions
                   </label>
                   <textarea

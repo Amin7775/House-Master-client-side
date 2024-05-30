@@ -9,7 +9,7 @@ import CountUp from 'react-countup';
 
 const WhyChooseUs = () => {
   return (
-    <div className="w-full bg-[#f5f5f9] pb-8 md:pb-16 ">
+    <div className="w-full bg-[#f5f5f9] pb-8 md:pb-16 pt-12">
       <div className="container mx-auto px-2 md:px-5 lg:px-0">
         <h1 className="font-semibold">
           <AiOutlineLine className="inline"></AiOutlineLine> WHY CHOOSE US

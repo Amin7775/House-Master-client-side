@@ -108,10 +108,10 @@ const NavTwo = () => {
         </div>
         <a className="btn btn-ghost normal-case text-xl py-1 h-full ">
           <Link to={'/'}>
-          <div className="flex items-center">
+          <div className="flex items-center gap-2">
             <SiHomebridge className="text-5xl"></SiHomebridge>
-            <span className="self-center whitespace-nowrap text-3xl font-extrabold dark:text-white">
-              <span className="text-[#009579] ml-2">House</span> Master
+            <span className="self-center whitespace-nowrap text-3xl font-bold mb-1 ">
+              House Master
             </span>
           </div>
           </Link>
@@ -151,7 +151,7 @@ const NavTwo = () => {
           <div className="flex items-center gap-3">
           <p className="hidden md:block font-medium text-black">{user.displayName}</p>
           <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar dark:border-white dark:border-2">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-28 rounded-full">
             {image ? <img src={image} /> : <img src={user.photoURL} />}
                 </div>
