@@ -56,6 +56,7 @@ const Login = () => {
       googleRegister()
       .then(userDetails => {
         // console.log(userDetails.user)
+        navigate(location?.state ? location?.state : '/')
         setPic(userDetails.user.photoURL)
       })
       .catch(error=>{
